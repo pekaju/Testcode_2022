@@ -9,12 +9,23 @@
 
 #include "header.h"
 
+/**
+ * @brief the main function will check if command line argument is in correct parameters, then call 
+ * other functions which will return the correct dates. Then it calls file writing function to save the data
+ * into a file. 
+ * @param argc, int, this is the number of arguments given from command line
+ * @param argv, *char[], pointer to an array of characters, in this case they will be numbers entered by user.
+ * @return 0
+ */
 int main ( int argc, char *argv[] )
 {
     if ( argc > 2 ) // in case too many integers are entered
     {
+	// send a message of error
         perror ( "Liiga palju argumente\n" );
-        exit ( 1 );
+        
+	// exit the program
+	exit ( 1 );
     } 
     else if ( argc <= 1 ) // in case no integers are entered
     {
@@ -22,18 +33,24 @@ int main ( int argc, char *argv[] )
         exit ( 1 );
     }
     int y = atoi ( argv[1] ); // year passed into main function as an argument converted from a string into an integer
+    
+    // if year is too small, smaller than one
     if ( y < 1 )
     {
         perror ( "Aasta on liiga väike, palun valige aasta vahemikus 1 - 9999\n" );
         exit ( 1 );
     }
+	
+    // if year is too big, bigger than 9999
     else if ( y > 9999 )
     {
         perror ( "Aasta on liiga suur, palun valige aasta vahemikus 1 - 9999\n" );
         exit ( 1 );
     }
 	
+    // array of integers where dates of payment will be saved
     int dates[MONTHS]; 
+    //array of integers where reminder dates will be entered
     int reminder[MONTHS];
 
     for ( int m = 0; m < ( MONTHS ); m++ ) // loop until 12 months is hit
