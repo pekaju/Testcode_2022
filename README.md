@@ -3,6 +3,7 @@ This is a program intended for a company who needs to check which dates the empl
 ## How to use
 The program reads a year as a command line argument, any year from 1 - 9999 can be used. 
 After having compiled the program, when running add the year after the executable. 
+
 For example on macos:
 *gcc -o testules testules.c
 ./testules 2022*
