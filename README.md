@@ -1,7 +1,8 @@
 # Payday
 This is a program intended for a company who needs to check which dates the employers will be paid on.
 ## How to use
-The file needs a year as command line input, from 1 - 9999. 
+The file needs a year as a command line argument, any year from 1 - 9999 can be used. 
+Run the program after compiling like this: *gcc testules 2022*
 ## How it works
 It takes a year as an input from CLI, calculates which dates the employers can be payed on every month and for 
 each payment date a notification date 3 days prior. First it checks if employer can be payed on 10th of said month, 
